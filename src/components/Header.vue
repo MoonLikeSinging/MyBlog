@@ -1,25 +1,23 @@
 <template>
-  <div class="container-fluid" style="font-size: 12px ; height: 37px; color: #666; background-color: #eeeeee">
-        <div class="container">
-            <div class="row">
-                <div></div>
-                <div class="col-md-auto col-8" style="margin-top: 5px">
+  <div class="container-fluid">
+            <div v-if="responseBody" class="row">
+                <div class="col-sm-4 col-md-3 d-none d-sm-block">
+                    <img  class="logo" src="../assets/img/logo.png">
+                </div>
+                <div  class="col-sm-4 col-md-auto col-7" style="margin-top: 5px">
                     <span>
                         <i class="iconfont  icon-zhuye"></i>
                         {{responseBody.blogDesc}}
                     </span>
                 </div>
-                <div class="col-md-6 d-none d-sm-block"></div>
-                <div class="col-md-auto col-4" style="margin-top: 5px">
-                    <div>
+                <div class="col-md-5 d-none d-md-block"></div>
+                <div class="col-sm-4 col-md-auto col-4" style="margin-top: 5px">
                     <span>
                         <i class="iconfont icon-yonghu"></i>
                         {{responseBody.nickName}}
                     </span>
-                    </div>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
@@ -27,7 +25,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'TopMenu',
+  name: 'Header',
   components:{},
   props:{},
   data(){
@@ -56,4 +54,16 @@ export default {
 }
 </script>
 <style>
+.logo {
+    height: 36px;
+    float: left;
+    margin-left: 66px;
+}
+
+.container-fluid .row{
+    font-size: 12px ; 
+    height: 37px;
+    color: #666; 
+    background-color: #eeeeee
+}
 </style>

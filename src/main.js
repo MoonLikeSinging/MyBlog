@@ -3,7 +3,8 @@ import App from './App.vue'
 import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
-import '../src/assets/css/iconfont.css'
+import './icons/iconfont.css'
+
 import router from './router'
 
 Vue.config.productionTip = false
