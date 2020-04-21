@@ -2,8 +2,8 @@
   <div id="app">
     <Header></Header>
     <div id="nav">
-      <router-link class="col-md-4 col-4" to="/">首页</router-link> |
-      <router-link class="col-md-4 col-4" to="/about">诗词</router-link> |
+      <router-link class="col-md-4 col-4" to="/">首页</router-link>
+      <router-link class="col-md-4 col-4" to="/about">诗词</router-link>
       <router-link class="col-md-4 col-4" to="/about">博客</router-link>
     </div>
     <router-view/>
@@ -19,11 +19,6 @@ export default {
   }
   
 }
-
-var windownWidth = window.innerWidth;
-
-
-
 </script>
 <style lang="scss">
 #app {
@@ -36,7 +31,11 @@ var windownWidth = window.innerWidth;
 
 #nav {
   
-  padding: 50px;
+  padding: 30px;
+
+  @media screen and (max-width: 576px){
+      padding: 5px;
+    }
 
   a {
     color: #00000080;
@@ -72,6 +71,10 @@ var windownWidth = window.innerWidth;
       padding: 100px;
     }
   }
+
+  a:hover{
+      color: #000000b3;
+    }
 }
 
 

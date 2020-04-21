@@ -2,7 +2,9 @@
   <div class="container-fluid">
             <div v-if="responseBody" class="row">
                 <div class="col-sm-4 col-md-3 d-none d-sm-block">
-                    <img  class="logo" src="../assets/img/logo.png">
+                    <router-link to="/">
+                        <img  class="logo" src="../assets/img/logo.png">
+                    </router-link>
                 </div>
                 <div  class="col-sm-4 col-md-auto col-7" style="margin-top: 5px">
                     <span>
@@ -22,7 +24,8 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import {getClientProfileById} from '@/api/clientProfile'
 
 export default {
   name: 'Header',
@@ -38,12 +41,7 @@ export default {
   methods:{},
   created(){},
   mounted(){
-    axios
-      .get('http://localhost:9000/client',{
-          params:{
-              clientId:100000
-          }
-      })
+    getClientProfileById(100000)
       .then(response =>(this.responseBody =response.data))
       .catch(function (error){
           console.error();
@@ -58,6 +56,7 @@ export default {
     height: 36px;
     float: left;
     margin-left: 66px;
+    margin-top: -2px;
 }
 
 .container-fluid .row{
