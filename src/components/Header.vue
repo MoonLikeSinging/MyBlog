@@ -44,10 +44,8 @@ export default {
     getClientProfileById(100000)
       .then(response =>(this.responseBody =response.data))
       .catch(function (error){
-          console.error();
-          
+          console.error();      
       });
-
   }
 }
 </script>

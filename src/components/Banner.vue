@@ -4,18 +4,13 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div class="carousel-inner">  
+            <div v-bind:class="{active :getActive(key)}" class="carousel-item" v-for="(imgPath, key) in imgPaths" :key="key">
                 <router-link to="/about">
-                    <img class="d-block w-100" src="../assets/img/shaonianyou.jpg" alt="First slide">
+                    <img class="d-block w-100" :src="imgPath.src" alt="First slide">
                 </router-link>
-            </div>
-            <div class="carousel-item">
-                <router-link to="/about">
-                    <img class="d-block w-100" src="../assets/img/music_muyuyujinyu.jpg" alt="Second slide">
-                </router-link>
-            </div>
-            <router-view></router-view>
+                <router-view></router-view> 
+            </div>     
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,19 +24,43 @@
 </template>
 
 <script>
+import {getClientBannerByClientId} from '@/api/clientBanner'
+
 export default {    
   name: 'Banner',
   components:{},
   props:{},
   data(){
     return {
+        imgPaths : null,
+        isActive : false,
     }
   },
   watch:{},
-  computed:{},
-  methods:{},
+  computed:{
+  },
+  methods:{
+      getActive(key){
+          if(key==0){
+              return true
+          }else{
+              return false
+          } 
+      }
+  },
   created(){},
-  mounted(){}
+  mounted(){
+      getClientBannerByClientId(100000)
+      .then(response =>(this.imgPaths =response.data.map(imgPath =>{
+          var imgSrc = require('../assets/img/' + imgPath.bannerSrc);
+          return {
+              src: imgSrc
+          }
+      })))
+      .catch(function (error){
+          console.error();      
+      });
+  }
 }
 </script>
 <style >
