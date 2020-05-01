@@ -3,8 +3,8 @@
     <Header></Header>
     <div id="nav">
       <router-link class="col-md-4 col-4" to="/">首页</router-link>
-      <router-link class="col-md-4 col-4" to="/about">诗词</router-link>
-      <router-link class="col-md-4 col-4" to="/about">博客</router-link>
+      <router-link class="col-md-4 col-4" to="/poetry">诗词</router-link>
+      <router-link class="col-md-4 col-4" to="/blog">博客</router-link>
     </div>
     <router-view/>
   </div>
@@ -16,8 +16,7 @@ import Header from './components/Header.vue';
 export default {
   components:{
     Header,
-  }
-  
+  },
 }
 </script>
 <style lang="scss">
@@ -48,13 +47,13 @@ export default {
 
 
     @media screen and (max-width: 576px){
-      font-size: 30px;
-      padding: 5px;
+      font-size: 12px;
+      padding: 25px;
     }
 
     @media screen and (min-width: 576px){
-      font-size: 36px;
-      padding: 5px;
+      font-size: 24px;
+      padding: 40px;
     }
     @media screen and (min-width: 768px){
       font-size: 36px;

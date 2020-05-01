@@ -6,8 +6,8 @@
         </ol>
         <div class="carousel-inner">  
             <div v-bind:class="{active :getActive(key)}" class="carousel-item" v-for="(imgPath, key) in imgPaths" :key="key">
-                <router-link to="/about">
-                    <img class="d-block w-100" :src="imgPath.src" alt="First slide">
+                <router-link to="/poetry">
+                    <img class="d-block w-100" :src="imgPath.src" alt="Slide">
                 </router-link>
                 <router-view></router-view> 
             </div>     
@@ -51,8 +51,8 @@ export default {
   created(){},
   mounted(){
       getClientBannerByClientId(100000)
-      .then(response =>(this.imgPaths =response.data.map(imgPath =>{
-          var imgSrc = require('../assets/img/' + imgPath.bannerSrc);
+      .then(response =>(this.imgPaths =response.data.map(item =>{
+          var imgSrc = require('../assets/img/' + item.bannerSrc);
           return {
               src: imgSrc
           }

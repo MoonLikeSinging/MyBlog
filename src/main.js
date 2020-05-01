@@ -3,11 +3,21 @@ import App from './App.vue'
 import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
+import 'bootstrap/dist/css/bootstrap-grid.min.css'
 import './icons/iconfont.css'
+import VueLazyLoad from 'vue-lazyload'
 
 import router from './router'
 
 Vue.config.productionTip = false
+
+Vue.use(VueLazyLoad, {
+  preLoad: 1.3,
+  error: require('./assets/img/loading.jpg'),
+  loading: require('./assets/img/loading.jpg'),
+  attempt: 1,
+  lazyComponent: true
+})
 
 new Vue({
   router,
