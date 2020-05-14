@@ -1,5 +1,18 @@
 <template>
   <div>
+    <div class="container">
+        <div class="row personal-example">
+            <div>
+                <img  src="../assets/img/gerenshici.png">
+            </div>
+            <hr />
+            <div>
+                <router-link to="/poetry">
+                    <button type="button">查看更多</button>
+                </router-link>
+            </div>
+        </div>   
+    </div>     
     <div class="container" :class="{'container-margin-top': getContainerMarginTop(key) }" v-for="(item, key) in poetry" :key="key">
       <div class="fade-in-words" >
         <div v-if = "item.bgInd === 'Y'">
@@ -11,7 +24,7 @@
               </div>
             </div>
           </div>    
-          <p class="intro">简介：{{item.synopsis}}</p>  
+          <p class="intro">{{item.title}}：创作于 {{item.createDate}}</p>  
         </div>
         <div v-else-if = "item.bgInd === 'N'">
           <div class="row">
@@ -25,7 +38,7 @@
               </div>
             </div>   
           </div>
-          <p class="intro">简介：{{item.synopsis}}</p>  
+          <p class="intro">{{item.title}}：创作于 {{item.createDate}}</p>  
         </div>    
       </div>
     </div>
@@ -33,10 +46,10 @@
 </template>  
 
 <script>
-import {getAllPoetryByClientId} from '@/api/clientPoetry'
+import {getTwoPoetryRandomByClientId} from '@/api/clientPoetry'
 
 export default {
-  name: 'AncientPoetry',
+  name: 'PoetryExampleInHome',
   components:{},
   props:{
   },
@@ -76,7 +89,7 @@ export default {
   },
   created(){},
   mounted(){
-    getAllPoetryByClientId(100000)
+    getTwoPoetryRandomByClientId(100000)
     .then(response => (this.poetry = response.data.map(item =>{
       var title = "《" + item.title + "》";
       var verse = item.content.split('\n');
@@ -89,12 +102,14 @@ export default {
       var height = image.height;
 
       return {
+        title : title,
         contents : content,
         synopsis : item.synopsis,
         imgSrc : imgSrc,
         bgInd : item.bgInd,
         height : height + 'px',
-        left : item.relativePositionLeftPercentage +'%'
+        left : item.relativePositionLeftPercentage +'%',
+        createDate : item.createDate
       } 
     })))
     .catch(function(error){
@@ -105,7 +120,7 @@ export default {
 </script>
 <style lang="scss">
 @import '../styles/poetry.scss';
-
+@import '../styles/common.scss';
 .container-margin-top{
   margin-top: 100px
 }

@@ -20,61 +20,6 @@ export default {
 }
 </script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #1a1b1b;
-}
-
-#nav {
-  
-  padding: 30px;
-
-  @media screen and (max-width: 576px){
-      padding: 5px;
-    }
-
-  a {
-    color: #00000080;
-    font-family: STXingkai; 
-    text-decoration:none;
-
-    &.router-link-exact-active {
-      color: #000000e6;
-    };
-
-
-    @media screen and (max-width: 576px){
-      font-size: 12px;
-      padding: 25px;
-    }
-
-    @media screen and (min-width: 576px){
-      font-size: 24px;
-      padding: 40px;
-    }
-    @media screen and (min-width: 768px){
-      font-size: 36px;
-      padding: 50px;
-    }
-
-    @media screen and (min-width: 992px){
-      font-size: 42px;
-      padding: 75px;
-    }
-
-    @media screen and (min-width: 1200px){
-      font-size: 48px;
-      padding: 100px;
-    }
-  }
-
-  a:hover{
-      color: #000000b3;
-    }
-}
-
+@import './styles/app.scss';
 
 </style>

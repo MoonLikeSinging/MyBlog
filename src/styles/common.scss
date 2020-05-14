@@ -1,0 +1,107 @@
+.personal-example {
+
+    img {
+        width: auto;
+
+        @media screen and (max-width: 576px){
+            height: 35px;
+        }
+        
+        @media screen and (min-width: 576px){
+            height: 45px; 
+        }
+        
+        @media screen and (min-width: 768px){
+            height: 65px; 
+        }
+      
+        @media screen and (min-width: 992px){
+            height: 85px; 
+        }
+      
+        @media screen and (min-width: 1200px){
+            height: 100px;
+        } 
+    }
+    
+    hr {
+        border: 0;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+        @media screen and (max-width: 576px){
+          width: 55%;
+          margin: 18px 0 0 0;
+          height: 2px;
+        }
+        @media screen and (min-width: 576px){
+            width:60%;
+            margin:22px 0 0 0;
+            height: 2px;
+        }
+        
+        @media screen and (min-width: 768px){
+            width:60%;
+            margin:32px 0 0 0;
+            height: 3px;
+        }
+      
+        
+        @media screen and (min-width: 992px){
+            width:60%;
+            margin: 42px 0 0 0;
+            height: 3px;
+        }
+      
+        @media screen and (min-width: 1200px){
+            width:60%;
+            margin:50px 0 0 0;
+            height: 4px;
+        } 
+    }
+
+    button {
+      border-radius: 5px;
+      text-decoration: none;
+      color: #d2c6c6;
+      position: relative;
+      display: inline-block;
+      background-color: #ffefef;
+      border-width: 0;
+      outline: none;
+
+      @media screen and (max-width: 576px){
+        margin: 0 0 6px 0 !important;
+        padding: 6px 8px;
+        font-size: 8px;
+        box-shadow: 0px 1px 0px 0px #e6cfcf;
+      }
+      
+      @media screen and (min-width: 576px){
+        margin: 6px 0 0 0 !important;
+        padding: 8px 10px;
+        font-size: 12px;
+        box-shadow: 0px 2px 0px 0px #e6cfcf;
+      }
+
+      @media screen and (min-width: 768px){
+        margin: 12px 0 0 0 !important;
+        padding: 10px 14px;
+        font-size: 14px;
+        box-shadow: 0px 3px 0px 0px #e6cfcf;
+      }
+  
+      @media screen and (min-width: 992px){
+        margin: 12px 0 0 0 !important;
+        padding: 12px 18px;
+        font-size: 18px;
+        box-shadow: 0px 4px 0px 0px #e6cfcf;
+      }
+  
+      @media screen and (min-width: 1200px){
+        margin:15px 0 0 0 !important;
+        padding: 15px 25px;
+        font-size: 22px;
+        box-shadow: 0px 5px 0px 0px #e6cfcf;
+      } 
+    }
+}

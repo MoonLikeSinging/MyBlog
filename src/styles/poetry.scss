@@ -176,4 +176,137 @@
     font-size: 14px;
     margin-top: 10px;
     text-align: left;
+    color: #6c757d;
+
+    @media screen and (max-width: 576px){
+        font-size: 8px;  
+        line-height: 16px;
+    }
+    
+    @media screen and (min-width: 576px){
+        font-size: 10px; 
+        line-height: 18px;
+    }
+    
+    @media screen and (min-width: 768px){
+        font-size: 12px;
+        line-height: 20px;
+    }
+  
+    
+    @media screen and (min-width: 992px){
+        font-size: 14px;
+        line-height: 22px;
+    }
+  
+    @media screen and (min-width: 1200px){
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+
+.poetry-format-background-img {
+    writing-mode: vertical-rl;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: STXingkai;
+    position: relative;
+  
+    @media screen and (max-width: 576px){
+        left: 60%;
+        height: 170px;
+        font-size: 8px;  
+        line-height: 8px;
+    }
+    
+    @media screen and (min-width: 576px){
+        font-size: 12px;
+        left: 60%;
+        height: 272px; 
+        line-height: 14px; 
+    }
+    
+    @media screen and (min-width: 768px){
+        font-size: 16px;
+        left: 60%;
+        height: 350px; 
+        line-height: 16px;
+    }
+  
+    @media screen and (min-width: 992px){
+        font-size: 20px;
+        left: 60%;
+        height: 400px; 
+        line-height: 20px;
+    }
+  
+    @media screen and (min-width: 1200px){
+        font-size: 24px;
+        left: 76%;
+        height: 479px;
+        line-height: 26px;
+    }    
+}
+
+
+.poetry-format-normal-img {
+    writing-mode: vertical-rl;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: STXingkai;
+    position: relative;
+    left: 5%;
+  
+    @media screen and (max-width: 576px){
+        font-size: 8px; 
+        height: 300px;
+        line-height: 20px;
+    }
+
+    @media screen and (min-width: 576px){
+        font-size: 12px;
+        height: 400px; 
+        line-height: 30px; 
+    }
+
+    @media screen and (min-width: 768px){
+        font-size: 16px;
+        height: 500px; 
+        line-height: 40px;
+    }
+  
+    @media screen and (min-width: 992px){
+        font-size: 20px;
+        height: 550px; 
+        line-height: 45px;
+    }
+  
+    @media screen and (min-width: 1200px){
+        font-size: 24px;
+        height: 600px;
+        line-height: 50px;
+    }    
+}
+
+.poetry-img {
+    @media screen and (max-width: 576px){
+        height: 300px;
+    }
+    
+    @media screen and (min-width: 576px){
+        height: 400px; 
+    }
+    
+    @media screen and (min-width: 768px){
+        height: 500px; 
+    }
+  
+    @media screen and (min-width: 992px){
+        height: 550px; 
+    }
+  
+    @media screen and (min-width: 1200px){
+        height: 600px;
+    }    
 }
