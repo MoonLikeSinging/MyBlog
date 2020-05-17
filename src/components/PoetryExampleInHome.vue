@@ -16,28 +16,33 @@
     <div class="container" :class="{'container-margin-top': getContainerMarginTop(key) }" v-for="(item, key) in poetry" :key="key">
       <div class="fade-in-words" >
         <div v-if = "item.bgInd === 'Y'">
-          <div class="row" v-lazy:background-image="item.imgSrc" style="background-repeat: no-repeat; background-size: 100% 100%">
-            <div class="poetry-format-background-img" :style="{left: item.left}">
-              <div v-for="(verse, contentKey) in item.contents" :key="contentKey">
-                <div :class= getPoetryCss(contentKey) v-html="verse">
+          <router-link :to="{path: item.toPath}">
+            <div class="row" v-lazy:background-image="item.imgSrc" style="background-repeat: no-repeat; background-size: 100% 100%">
+              <div class="poetry-format-background-img" :style="{left: item.left}">
+                <div v-for="(verse, contentKey) in item.contents" :key="contentKey">
+                  <div :class= getPoetryCss(contentKey) v-html="verse">
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>    
+            </div> 
+          </router-link>             
           <p class="intro">{{item.title}}：创作于 {{item.createDate}}</p>  
         </div>
         <div v-else-if = "item.bgInd === 'N'">
-          <div class="row">
-            <div class="poetry-img">
-              <img v-lazy = item.imgSrc  style="height: inherit">
-            </div>
-            <div class="poetry-format-normal-img">
-              <div v-for="(verse, contentKey) in item.contents" :key="contentKey">
-                <div :class= getPoetryCss(contentKey) v-html="verse">
-                </div>
+          <router-link :to="{path: item.toPath}">
+            <div class="row">
+              <div class="poetry-img">
+                <img v-lazy = item.imgSrc  style="height: inherit">
               </div>
-            </div>   
-          </div>
+              <div class="poetry-format-normal-img">
+                <div v-for="(verse, contentKey) in item.contents" :key="contentKey">
+                  <div :class= getPoetryCss(contentKey) v-html="verse">
+                  </div>
+                </div>
+              </div>   
+            </div>
+          </router-link>  
+          
           <p class="intro">{{item.title}}：创作于 {{item.createDate}}</p>  
         </div>    
       </div>
@@ -100,6 +105,8 @@ export default {
       var image = new Image();
       image.src = require('../assets/img/' + item.imageSrc);
       var height = image.height;
+      var name = item.imageSrc.split('.')[0];
+      var toPath = 'poetry?#' + name;
 
       return {
         title : title,
@@ -109,7 +116,8 @@ export default {
         bgInd : item.bgInd,
         height : height + 'px',
         left : item.relativePositionLeftPercentage +'%',
-        createDate : item.createDate
+        createDate : item.createDate,
+        toPath : toPath,
       } 
     })))
     .catch(function(error){

@@ -2,7 +2,7 @@
   <div>
     <div class="container" :class="{'container-margin-top': getContainerMarginTop(key) }" v-for="(item, key) in poetry" :key="key">
       <div class="fade-in-words" >
-        <div v-if = "item.bgInd === 'Y'">
+        <div :id="item.idName" :name = item.idName :ref="item.idName" v-if = "item.bgInd === 'Y'">
           <div class="row" v-lazy:background-image="item.imgSrc" style="background-repeat: no-repeat; background-size: 100% 100%">
             <div class="poetry-format-background-img" :style="{left: item.left}">
               <div v-for="(verse, contentKey) in item.contents" :key="contentKey">
@@ -13,7 +13,7 @@
           </div>    
           <p class="intro">简介：{{item.synopsis}}</p>  
         </div>
-        <div v-else-if = "item.bgInd === 'N'">
+        <div :id="item.idName" :name = item.idName :ref="item.idName" v-else-if = "item.bgInd === 'N'">
           <div class="row">
             <div class="poetry-img">
               <img v-lazy = item.imgSrc  style="height: inherit">
@@ -45,7 +45,8 @@ export default {
       poetry: null,
     }
   },
-  watch:{},
+  watch:{
+  },
   computed:{
   },
   methods:{
@@ -72,12 +73,11 @@ export default {
       }else{
         return true
       }
-    }
-  },
-  created(){},
-  mounted(){
-    getAllPoetryByClientId(100000)
-    .then(response => (this.poetry = response.data.map(item =>{
+    },
+
+    getPoetryInfo(id) {
+      getAllPoetryByClientId(id)
+      .then(response => (this.poetry = response.data.map(item =>{
       var title = "《" + item.title + "》";
       var verse = item.content.split('\n');
       var array = new Array();
@@ -87,6 +87,7 @@ export default {
       var image = new Image();
       image.src = require('../assets/img/' + item.imageSrc);
       var height = image.height;
+      var idName = item.imageSrc.split('.')[0];
 
       return {
         contents : content,
@@ -94,13 +95,31 @@ export default {
         imgSrc : imgSrc,
         bgInd : item.bgInd,
         height : height + 'px',
-        left : item.relativePositionLeftPercentage +'%'
+        left : item.relativePositionLeftPercentage +'%',
+        idName : idName,
       } 
-    })))
-    .catch(function(error){
-      console.error();
-    });
-  }
+      })))
+      .then(scorllByHash =>{
+        var hash = window.location.hash;
+        var index = hash.lastIndexOf("#");
+        if (index != -1) {
+          var id = hash.substring(index + 1, hash.length + 1);
+          var element = document.getElementById(id);
+          if (element) {
+            setTimeout(() => {
+              var y = element.getBoundingClientRect().top+document.documentElement.scrollTop -25;
+              window.scrollTo(0, y);
+            }, 200); 
+       }}})
+      .catch(function(error){
+        console.error();
+      })
+    }
+  },
+  created(){},
+  mounted(){
+      this.getPoetryInfo(100000)
+  },
 }
 </script>
 <style lang="scss">
