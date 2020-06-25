@@ -125,7 +125,5 @@ export default {
 <style lang="scss">
 @import '../styles/poetry.scss';
 
-.container-margin-top{
-  margin-top: 100px
-}
+
 </style>

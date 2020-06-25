@@ -8,7 +8,10 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: '首页',
+    }
   },
   {
     path: '/poetry',
@@ -16,12 +19,18 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "Poetry" */ '../views/Poetry.vue')
+    component: () => import(/* webpackChunkName: "Poetry" */ '../views/Poetry.vue'),
+    meta: {
+      title: '诗词',
+    }
     },
   {
     path: '/blog',
     name: 'Blog',
-    component: () => import('../views/Blog.vue')
+    component: () => import('../views/Blog.vue'),
+    meta: {
+      title: '博客',
+    }
   }
 ]
 

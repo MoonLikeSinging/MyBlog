@@ -1,56 +1,97 @@
-.fade-in-words{
+.fade-in-words {
     margin: 0 auto;
     text-align: center;
     line-height: 26px;
     font-family: STXingkai;
     font-size: 24px;
+
     a {
         color: #000000;
-        text-decoration:none;
+        text-decoration: none;
     }
 }
-.eight-words,.seven-words,.six-words,.five-words,.four-words,.third-words,.second-words,.first-words{
-    margin: 0 10px ;
-}
-/*自定义一个透明度从0到1的动画，它的名称是fade-in*/
-@keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-webkit-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-ms-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-o-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-moz-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
+
+.eight-words,
+.seven-words,
+.six-words,
+.five-words,
+.four-words,
+.third-words,
+.second-words,
+.first-words {
+    margin: 0 10px;
 }
 
-.title-words
-{
-    opacity: 0;      /*实先规定文字的状态是不显示的*/
-    animation: fade-in 4s ease 0s 1;    /*调用名称为fade-in的动画，全程动画显示时间4S，进入方式为ease，延时0S进入，播放次数1次*/
+/*自定义一个透明度从0到1的动画，它的名称是fade-in*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.title-words {
+    opacity: 0;
+    /*实先规定文字的状态是不显示的*/
+    animation: fade-in 4s ease 0s 1;
+    /*调用名称为fade-in的动画，全程动画显示时间4S，进入方式为ease，延时0S进入，播放次数1次*/
     -webkit-animation: fade-in 4s ease 0s 1;
     -moz-animation: fade-in 4s ease 0s 1;
     -o-animation: fade-in 4s ease 0s 1;
     -ms-animation: fade-in 4s ease 0s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
-.first-words{
+
+.first-words {
     opacity: 0;
     animation: fade-in 4s ease 2s 1;
     -webkit-animation: fade-in 4s ease 2s 1;
@@ -59,13 +100,14 @@
     -ms-animation: fade-in 4s ease 2s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
-.second-words{
+
+.second-words {
     opacity: 0;
     animation: fade-in 4s ease 4s 1;
     -webkit-animation: fade-in 4s ease 4s 1;
@@ -74,13 +116,14 @@
     -ms-animation: fade-in 4s ease 4s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
-.third-words{
+
+.third-words {
     opacity: 0;
     animation: fade-in 4s ease 6s 1;
     -webkit-animation: fade-in 4s ease 6s 1;
@@ -89,13 +132,14 @@
     -ms-animation: fade-in 4s ease 6s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
-.four-words{
+
+.four-words {
     opacity: 0;
     animation: fade-in 4s ease 8s 1;
     -webkit-animation: fade-in 4s ease 8s 1;
@@ -104,14 +148,14 @@
     -ms-animation: fade-in 4s ease 8s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
 
-.five-words{
+.five-words {
     opacity: 0;
     animation: fade-in 4s ease 10s 1;
     -webkit-animation: fade-in 4s ease 10s 1;
@@ -120,14 +164,14 @@
     -ms-animation: fade-in 4s ease 10s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
 
-.six-words{
+.six-words {
     opacity: 0;
     animation: fade-in 4s ease 12s 1;
     -webkit-animation: fade-in 4s ease 12s 1;
@@ -136,14 +180,14 @@
     -ms-animation: fade-in 4s ease 12s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
 
-.seven-words{
+.seven-words {
     opacity: 0;
     animation: fade-in 4s ease 14s 1;
     -webkit-animation: fade-in 4s ease 14s 1;
@@ -152,14 +196,14 @@
     -ms-animation: fade-in 4s ease 14s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
 
-.eight-words{
+.eight-words {
     opacity: 0;
     animation: fade-in 4s ease 16s 1;
     -webkit-animation: fade-in 4s ease 16s 1;
@@ -168,42 +212,42 @@
     -ms-animation: fade-in 4s ease 16s 1;
 
     /*规定动画的最后状态为结束状态*/
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
 }
 
-.intro{
-    font-family:"Microsoft YaHei UI";
+.intro {
+    font-family: "Microsoft YaHei UI";
     font-size: 14px;
     margin-top: 10px;
     text-align: left;
     color: #6c757d;
 
-    @media screen and (max-width: 576px){
-        font-size: 8px;  
+    @media screen and (max-width: 576px) {
+        font-size: 8px;
         line-height: 16px;
     }
-    
-    @media screen and (min-width: 576px){
-        font-size: 10px; 
+
+    @media screen and (min-width: 576px) {
+        font-size: 10px;
         line-height: 18px;
     }
-    
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: 768px) {
         font-size: 12px;
         line-height: 20px;
     }
-  
-    
-    @media screen and (min-width: 992px){
+
+
+    @media screen and (min-width: 992px) {
         font-size: 14px;
         line-height: 22px;
     }
-  
-    @media screen and (min-width: 1200px){
+
+    @media screen and (min-width: 1200px) {
         font-size: 16px;
         line-height: 26px;
     }
@@ -216,41 +260,41 @@
     text-align: center;
     font-family: STXingkai;
     position: relative;
-  
-    @media screen and (max-width: 576px){
+
+    @media screen and (max-width: 576px) {
         left: 60%;
         height: 170px;
-        font-size: 8px;  
+        font-size: 8px;
         line-height: 8px;
     }
-    
-    @media screen and (min-width: 576px){
+
+    @media screen and (min-width: 576px) {
         font-size: 12px;
         left: 60%;
-        height: 272px; 
-        line-height: 14px; 
+        height: 272px;
+        line-height: 14px;
     }
-    
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: 768px) {
         font-size: 16px;
         left: 60%;
-        height: 350px; 
+        height: 350px;
         line-height: 16px;
     }
-  
-    @media screen and (min-width: 992px){
+
+    @media screen and (min-width: 992px) {
         font-size: 20px;
         left: 60%;
-        height: 400px; 
+        height: 400px;
         line-height: 20px;
     }
-  
-    @media screen and (min-width: 1200px){
+
+    @media screen and (min-width: 1200px) {
         font-size: 24px;
         left: 76%;
         height: 479px;
         line-height: 26px;
-    }    
+    }
 }
 
 
@@ -261,56 +305,79 @@
     font-family: STXingkai;
     position: relative;
     left: 5%;
-  
-    @media screen and (max-width: 576px){
-        font-size: 8px; 
+
+    @media screen and (max-width: 576px) {
+        font-size: 8px;
         height: 300px;
-        line-height: 20px;
+        line-height: 15px;
     }
 
-    @media screen and (min-width: 576px){
+    @media screen and (min-width: 576px) {
         font-size: 12px;
-        height: 400px; 
-        line-height: 30px; 
+        height: 400px;
+        line-height: 30px;
     }
 
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
         font-size: 16px;
-        height: 500px; 
+        height: 500px;
         line-height: 40px;
     }
-  
-    @media screen and (min-width: 992px){
+
+    @media screen and (min-width: 992px) {
         font-size: 20px;
-        height: 550px; 
+        height: 550px;
         line-height: 45px;
     }
-  
-    @media screen and (min-width: 1200px){
+
+    @media screen and (min-width: 1200px) {
         font-size: 24px;
         height: 600px;
         line-height: 50px;
-    }    
+    }
 }
 
 .poetry-img {
-    @media screen and (max-width: 576px){
+    @media screen and (max-width: 576px) {
         height: 300px;
     }
-    
-    @media screen and (min-width: 576px){
-        height: 400px; 
+
+    @media screen and (min-width: 576px) {
+        height: 400px;
     }
-    
-    @media screen and (min-width: 768px){
-        height: 500px; 
+
+    @media screen and (min-width: 768px) {
+        height: 500px;
     }
-  
-    @media screen and (min-width: 992px){
-        height: 550px; 
+
+    @media screen and (min-width: 992px) {
+        height: 550px;
     }
-  
-    @media screen and (min-width: 1200px){
+
+    @media screen and (min-width: 1200px) {
         height: 600px;
-    }    
+    }
+}
+
+.container-margin-top {
+
+    @media screen and (max-width: 576px) {
+        margin-top: 20px;
+    }
+
+    @media screen and (min-width: 576px) {
+        margin-top: 40px;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: 60px;
+    }
+
+    @media screen and (min-width: 992px) {
+        margin-top: 80px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-top: 100px;
+    }
 }
