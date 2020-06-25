@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <APlayer style='text-align:left' :audio='audio' :lrcType=1 fixed :listMaxHeight=90></APlayer>
+    <APlayer style='text-align:left' :audio=audio :lrcType=0 :fixed=true :listMaxHeight=90 :autoplay=true mini:true :listFolded=true></APlayer>
     <Header></Header>
     <div id="nav">
       <router-link class="col-md-4 col-4" to="/">首页</router-link>
@@ -29,8 +29,7 @@ export default {
     getAllClientMusicByClientId(100000)
     .then(response => (this.audio = response.data.map(item =>{
 
-      var audioUrl = require('./assets/audio/' + item.url);
-      console.log(audioUrl)
+      var audioUrl = 'http://120.79.23.11:8080/audio/' + item.url;
 
       return {
         name: item.name,
